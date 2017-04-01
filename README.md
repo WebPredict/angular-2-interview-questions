@@ -57,3 +57,53 @@ PA: Set up angular2-logger, which is a package inspired by log4j.
 
 A: By specifying the moduleId to be module.id in the Component decorator. (Note: while this is still needed when using SystemJS, it is not necessary anymore when using Webpack module bundler for Angular 2 projects.)
 
+
+## NgModules Questions:
+
+**What is the purpose of NgModule?**
+
+A: to give Angular information on a particular module’s contents, through decorator properties like: declarations, imports, exports, providers, etc.
+
+**How do you decide to create a new NgModule?**
+
+A: Typically for a nontrivial feature in an application, that will involve a collection of related components and services.
+
+**What are the attributes that you can define in an NgModule annotation?**
+
+A: declarations, imports, exports, providers, bootstrap
+
+**What is the difference between a module's forRoot() and forChild() methods and why do you need it?**
+
+A: forRoot and forChild are conventional names for methods that deliver different import values to root and feature modules.
+
+**What would you have in a shared module?**
+
+A: common components, directives, and pipes used in other modules in your application.
+
+**What would you not put shared module?**
+
+A: services that should not have multiple instances created for the application.
+
+**What module would you put a singleton service whose instance will be shared throughout the application (e.g. ExceptionService andLoggerService)?**
+
+A: Root Module
+
+**What is the purpose of exports in an NgModule?**
+
+A: provide components, directives, pipes to other modules for their usage.
+
+**Why is it bad if SharedModule provides a service to a lazy loaded module?**
+A: TODO
+
+**Can we import a module twice?**
+
+A: yes, and the latest import will be what is used.
+
+**Can you re-export classes and modules?**
+
+A: Yes (?)
+
+**What kind of classes can you import in an angular module?**
+
+A: Components, pipes, directives
+
