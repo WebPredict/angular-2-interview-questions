@@ -107,3 +107,25 @@ A: Yes (?)
 
 A: Components, pipes, directives
 
+## Services Questions:
+
+**What is the use case of services?**
+
+A: One very common use case is providing data to components, often by fetching it from a server. Though there’s no real definition of service from Angular point of view – it could do almost anything (e.g., logging is another common use case, among many).
+
+**How are the services injected to your application?**
+
+A: Via Angular’s DI (Dependency Injection) mechanism
+
+**Why is it a bad idea to create a new service in a component like the one below?**
+`let service = new DataService();`
+
+A: The object may not be created with its needed dependencies.
+
+**How to make sure that a single instance of a service will be used in an entire application?**
+
+A: Provide it in the root module.
+
+**Why do we need provider aliases? And how do you create one?**
+
+A: To substitute an alternative implementation for a provider.  Can create like so: `{ provide: LoggerService, useClass: DateLoggerService }`
