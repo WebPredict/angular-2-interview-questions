@@ -129,3 +129,76 @@ A: Provide it in the root module.
 **Why do we need provider aliases? And how do you create one?**
 
 A: To substitute an alternative implementation for a provider.  Can create like so: `{ provide: LoggerService, useClass: DateLoggerService }`
+
+
+## Lifecycle Hooks Questions:
+
+**What is the possible order of lifecycle hooks in Angular?**
+
+A: ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy.
+
+**When will ngOnInit be called?**
+
+A: Called once, after the first ngOnChanges.
+
+**How would you make use of onNgInit()?**
+
+PA: fetch initial component data (e.g. from server).
+
+**What would you consider a thing you should be careful doing on onNgInit()?**
+
+A: ??
+
+**What is the difference between onNgInit() and constructor() of a component?**
+
+A: a directive’s data-bound input properties are not set until after construction, so that’s one difference.
+
+## Pipes Questions:
+
+**What is a pure pipe?**
+
+A: A pipe that is only executed when Angular detects a pure change to the input value (e.g. new primitive object or new object reference).
+
+**What is an impure pipe?**
+
+A: A pipe that is executed during every component change detection cycle (i.e., often – every keystroke, mouse move).
+
+**What is an async pipe?**
+
+A: an impure pipe that accepts a promise or observable as input and eventually returns emitted values.
+
+**What kind of data can be used with async pipe?**
+
+A: stateful, asynchronous
+
+**What types of pipes are supported in Angular 2?**
+
+A: Pure and impure pipes (async pipes a kind of impure pipe).
+
+## Routing Questions:
+
+**What is the difference between RouterModule.forRoot() vs RouterModule.forChild()? Why is it important?**
+
+A: forRoot is a convention for configuring app-wide Router service with routes, whereas forChild is for configuring the routes of lazy-loaded modules.
+
+**How does loadChildren property work?**
+
+A: the Router calls it to dynamically load lazy loaded modules for particular routes.
+
+**When does a lazy loaded module get loaded?**
+
+A: When its related route is first requested.
+
+**How would you use a Route Guard?**
+
+A: You would implement CanActivate or CanDeactivate and specify that guard class in the route path you’re guarding. 
+
+**How would you intercept 404 errors in Angular 2?**
+
+A: Can provide a final wildcard path like so: { path: ‘**’, component: PageNotFoundComponent }
+
+**This link doesn't work. Why? How do I fix it?**
+`<div routerLink='product.id'></div>`
+
+A: `<a [routerLink]=”[’product.id’]”>{{product.id}}</a>`
+
