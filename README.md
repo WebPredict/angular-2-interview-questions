@@ -202,3 +202,41 @@ A: Can provide a final wildcard path like so: { path: ‘**’, component: PageN
 
 A: `<a [routerLink]=”[’product.id’]”>{{product.id}}</a>`
 
+## Styling Questions:
+
+**How would you select a custom component to style it?**
+
+A: TODO
+
+**How do you reference the host of a component?**
+
+A: let DI inject an ElementRef into the constructor of your component.
+
+**What pseudo-class selector targets styles in the element that hosts the component?**
+
+A: The :host pseudo class selector.
+
+**How would you select all the child components' elements?**
+
+A: with the @ViewChildren decorator, like for example:
+
+`@ViewChildren(ChildDirective) viewChildren: QueryList<ChildDirective>;`
+
+**How would you select a css class in any ancestor of the component host element, all the way up to the document root?**
+
+A: using the :host-context() pseudo-class selector.
+
+**What selector force a style down through the child component tree into all the child component views?**
+
+A: use the /deep/ selector along with :host pseudo-class selector.
+
+**What does :host-context() pseudo-class selector target?**
+
+A: TODO
+
+**What does the following css do?**
+`:host-context(.theme-light) h2 {
+  background-color: red;
+}`
+
+A: Will change this component’s background-color to red if the context of the host has the .theme-light class applied.
