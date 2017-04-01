@@ -1,6 +1,6 @@
 # Angular 2 Interview Questions... And Answers!
 
-This is a collection of Angular 2 interview questions I've found online, along with possible reasonable answers for most of them. Feel free to contribute / send corrections.
+This is a collection of Angular 2 interview questions I've found online, along with (hopefully) correct answers for most of them. Feel free to contribute / send corrections.
 
 Note: PA == Possible Answer (one of many valid ones), A == Answer.
 
