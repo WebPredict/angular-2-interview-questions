@@ -11,6 +11,7 @@ Note: PA == Possible Answer (one of many valid ones), A == Answer.
 PA: Using the transition and animate function in an animations block like so: `animations: [transition('inactive => active'), animate('100 ms ease-in')]` 
 
 **How do you define a wildcare state?**
+
 A: Using the asterisk - example: `transition('* => active'), animate('100ms ease-in'))`
 
 ## Template Syntax Questions
