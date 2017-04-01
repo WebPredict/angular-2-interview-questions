@@ -232,7 +232,7 @@ A: use the /deep/ selector along with :host pseudo-class selector.
 
 **What does :host-context() pseudo-class selector target?**
 
-A: TODO
+A: The :host-context() selector looks for a CSS class in any ancestor of the component host element, up to the document root.
 
 **What does the following css do?**
 `:host-context(.theme-light) h2 {
@@ -240,3 +240,39 @@ A: TODO
 }`
 
 A: Will change this component’s background-color to red if the context of the host has the .theme-light class applied.
+
+
+## Forms Questions:
+
+**When do you use template driven vs model driven forms? Why?**
+
+A: Template driven forms make more sense for simpler forms, at least in terms of validation. Model driven or Reactive forms lend themselves to easier testing of the validation logic, so if that’s complex, Reactive forms make more sense. There’s also the issue of asynchronous (template driven forms) vs. synchronous (model driven).
+
+**How do you submit a form?**
+
+PA: use the ngSubmit event binding like so: `<form (ngSubmit)="onSubmit()" …>`
+
+**What's the difference between NgForm, FormGroup, and FormControl? How do they work together?**
+
+A: FormGroup tracks the value and validity state of a group of AbstractControl instances. FormControl does the same for an individual control. NgForm is a directive that Angular automatically attaches to each `<form>` tag. It has its own ‘valid’ property which is true only if every contained control is valid.
+
+**What's the advantage of using FormBuilder?**
+
+A: Reduces repetition and clutter by handling details of control creation for you.
+
+**How do you add form validation to a form built with FormBuilder?**
+
+A: pass in Validator objects along with the FormControl objects...
+
+**What's the difference between dirty, touched, and pristine on a form element?**
+
+A: dirty means it contains user data, touched means the user has at least done something with a particular control (perhaps just literally ‘touched’ it by giving it focus?), and pristine means the control has not been touched at all by the user.
+
+**How can you access validation errors in the template to display error messages?**
+
+PA: use formErrors
+
+**What is async validation and how is it done?**
+
+A: verifying some field using some asynchronous call (perhaps a server call)… return a `Promise<ValidationResult>` from your validator. When creating a FormControl object, you can pass an asynchronous validator into the constructor (e.g. `new FormControl(‘value’, syncValidator, asyncValidator)`).
+
