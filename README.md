@@ -277,3 +277,49 @@ PA: use formErrors
 
 A: verifying some field using some asynchronous call (perhaps a server call)… return a `Promise<ValidationResult>` from your validator. When creating a FormControl object, you can pass an asynchronous validator into the constructor (e.g. `new FormControl(‘value’, syncValidator, asyncValidator)`).
 
+
+## Architecture Questions:
+
+**What is a good use case for ngrx/store?**
+
+A: complex application state management requirements, involving asynchronous requests to update state…
+
+**What would be a good use case for having your own routing module?**
+
+A: An application whose requirements imply having many routes, and potentially route guards, and child routes.
+
+## API Questions:
+
+**What does this line do?**
+  `@HostBinding('[class.valid]') isValid;`
+
+A: Applies the css class ‘valid’ to whatever is using this directive conditionally based on the value of isValid.
+
+**Why would you use renderer methods instead of using native element methods?**
+
+A: Potentially if you’re rendering to something besides the browser, e.g. rendering native elements on a mobile device, or server side rendering (?).
+
+**What is the point of calling renderer.invokeElementMethod(rendererEl, methodName)?**
+
+A: To invoke a method on a particular element but avoid direct DOM access (so we don’t tie our code just to the browser).
+
+**How would you control size of an element on resize of the window in a component?**
+
+A:
+`@HostListener('window:resize', ['$event'])
+onResize(event: any) {
+    this.calculateBodyHeight();
+}`
+
+**What would be a good use for NgZone service?**
+
+A: Running an asynchronous process outside of Angular (?)
+
+**How would you protect a component being activated through the router?**
+
+A: Route Guards
+
+**How would you insert an embedded view from a prepared TemplateRef?**
+
+PA: `viewContainerRef.createEmbeddedView(templateRef);`
+
