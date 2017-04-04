@@ -22,7 +22,7 @@ A: A variable (defined using a #) in a component template, which can be referenc
 
 **What are the possible ways to bind component properties to an associated template?**
 
-A: interpolation binding, one way binding, two way binding.
+A: Interpolation binding, one way binding, two way binding.
 
 ## Component/Directive Questions
 
@@ -63,7 +63,7 @@ A: By specifying the moduleId to be module.id in the Component decorator. (Note:
 
 **What is the purpose of NgModule?**
 
-A: to give Angular information on a particular module’s contents, through decorator properties like: declarations, imports, exports, providers, etc.
+A: It's to give Angular information on a particular module’s contents, through decorator properties like: declarations, imports, exports, providers, etc.
 
 **How do you decide to create a new NgModule?**
 
@@ -71,7 +71,7 @@ A: Typically for a nontrivial feature in an application, that will involve a col
 
 **What are the attributes that you can define in an NgModule annotation?**
 
-A: declarations, imports, exports, providers, bootstrap
+A: Declarations, imports, exports, providers, bootstrap
 
 **What is the difference between a module's forRoot() and forChild() methods and why do you need it?**
 
@@ -79,11 +79,11 @@ A: forRoot and forChild are conventional names for methods that deliver differen
 
 **What would you have in a shared module?**
 
-A: common components, directives, and pipes used in other modules in your application.
+A: Common components, directives, and pipes used in other modules in your application.
 
 **What would you not put shared module?**
 
-A: services that should not have multiple instances created for the application.
+A: Services that should not have multiple instances created for the application.
 
 **What module would you put a singleton service whose instance will be shared throughout the application (e.g. ExceptionService andLoggerService)?**
 
@@ -91,7 +91,7 @@ A: Root Module
 
 **What is the purpose of exports in an NgModule?**
 
-A: provide components, directives, pipes to other modules for their usage.
+A: Provide components, directives, pipes to other modules for their usage.
 
 **Why is it (potentially) bad if SharedModule provides a service to a lazy loaded module?**
 
@@ -99,7 +99,7 @@ A: You will have two instances of the service in your application, which is ofte
 
 **Can we import a module twice?**
 
-A: yes, and the latest import will be what is used.
+A: Yes, and the latest import will be what is used.
 
 **Can you re-export classes and modules?**
 
@@ -146,7 +146,7 @@ A: Called once, after the first ngOnChanges.
 
 **How would you make use of onNgInit()?**
 
-PA: fetch initial component data (e.g. from server).
+PA: Fetch initial component data (e.g. from server).
 
 **What would you consider a thing you should be careful doing on onNgInit()?**
 
@@ -154,7 +154,7 @@ A: You cannot expect the component's children's data-bound properties to have be
 
 **What is the difference between onNgInit() and constructor() of a component?**
 
-A: a directive’s data-bound input properties are not set until after construction, so that’s one difference.
+A: A directive’s data-bound input properties are not set until after construction, so that’s one difference.
 
 ## Pipes Questions:
 
@@ -168,11 +168,11 @@ A: A pipe that is executed during every component change detection cycle (i.e., 
 
 **What is an async pipe?**
 
-A: an impure pipe that accepts a promise or observable as input and eventually returns emitted values.
+A: An impure pipe that accepts a promise or observable as input and eventually returns emitted values.
 
 **What kind of data can be used with async pipe?**
 
-A: stateful, asynchronous
+A: Stateful, asynchronous
 
 **What types of pipes are supported in Angular 2?**
 
@@ -186,7 +186,7 @@ A: forRoot is a convention for configuring app-wide Router service with routes, 
 
 **How does loadChildren property work?**
 
-A: the Router calls it to dynamically load lazy loaded modules for particular routes.
+A: The Router calls it to dynamically load lazy loaded modules for particular routes.
 
 **When does a lazy loaded module get loaded?**
 
@@ -213,7 +213,7 @@ A: Using the `:host` pseudo-class selector in your component's styles.
 
 **How do you reference the host of a component?**
 
-A: let DI inject an ElementRef into the constructor of your component.
+A: Let DI inject an ElementRef into the constructor of your component.
 
 **What pseudo-class selector targets styles in the element that hosts the component?**
 
@@ -221,17 +221,17 @@ A: The :host pseudo class selector.
 
 **How would you select all the child components' elements?**
 
-A: with the @ViewChildren decorator, like for example:
+A: With the @ViewChildren decorator, like for example:
 
 `@ViewChildren(ChildDirective) viewChildren: QueryList<ChildDirective>;`
 
 **How would you select a css class in any ancestor of the component host element, all the way up to the document root?**
 
-A: using the :host-context() pseudo-class selector.
+A: Using the :host-context() pseudo-class selector.
 
 **What selector force a style down through the child component tree into all the child component views?**
 
-A: use the /deep/ selector along with :host pseudo-class selector.
+A: Use the /deep/ selector along with :host pseudo-class selector.
 
 **What does :host-context() pseudo-class selector target?**
 
@@ -269,22 +269,22 @@ A: pass in Validator objects along with the FormControl objects...
 
 **What's the difference between dirty, touched, and pristine on a form element?**
 
-A: dirty means it contains user data, touched means the user has at least done something with a particular control (perhaps just literally ‘touched’ it by giving it focus?), and pristine means the control has not been touched at all by the user.
+A: Dirty means it contains user data, touched means the user has at least done something with a particular control (perhaps just literally ‘touched’ it by giving it focus?), and pristine means the control has not been touched at all by the user.
 
 **How can you access validation errors in the template to display error messages?**
 
-PA: use formErrors
+PA: Use formErrors
 
 **What is async validation and how is it done?**
 
-A: verifying some field using some asynchronous call (perhaps a server call)… return a `Promise<ValidationResult>` from your validator. When creating a FormControl object, you can pass an asynchronous validator into the constructor (e.g. `new FormControl(‘value’, syncValidator, asyncValidator)`).
+A: Verifying some field using some asynchronous call (perhaps a server call)… return a `Promise<ValidationResult>` from your validator. When creating a FormControl object, you can pass an asynchronous validator into the constructor (e.g. `new FormControl(‘value’, syncValidator, asyncValidator)`).
 
 
 ## Architecture Questions:
 
 **What is a good use case for ngrx/store?**
 
-A: complex application state management requirements, involving asynchronous requests to update state…
+A: Complex application state management requirements, involving asynchronous requests to update state.
 
 **What would be a good use case for having your own routing module?**
 
