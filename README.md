@@ -48,7 +48,7 @@ Answer: By using the two-way binding syntax [()] along with ngModel…
 
 **How would you create a component to display error messages throughout your application?**
 
-A: Set up an ErrorHandler... TODO 
+A: Implement your own ErrorHandler and configure it in the list of providers for the modules you want it used in. 
 
 **How would you support logging in your Angular app?**
 
@@ -93,8 +93,9 @@ A: Root Module
 
 A: provide components, directives, pipes to other modules for their usage.
 
-**Why is it bad if SharedModule provides a service to a lazy loaded module?**
-A: TODO
+**Why is it (potentially) bad if SharedModule provides a service to a lazy loaded module?**
+
+A: You will have two instances of the service in your application, which is often not what you want.
 
 **Can we import a module twice?**
 
@@ -102,7 +103,7 @@ A: yes, and the latest import will be what is used.
 
 **Can you re-export classes and modules?**
 
-A: Yes (?)
+A: Yes.
 
 **What kind of classes can you import in an angular module?**
 
@@ -119,6 +120,7 @@ A: One very common use case is providing data to components, often by fetching i
 A: Via Angular’s DI (Dependency Injection) mechanism
 
 **Why is it a bad idea to create a new service in a component like the one below?**
+
 `let service = new DataService();`
 
 A: The object may not be created with its needed dependencies.
@@ -148,7 +150,7 @@ PA: fetch initial component data (e.g. from server).
 
 **What would you consider a thing you should be careful doing on onNgInit()?**
 
-A: ??
+A: You cannot expect the component's children's data-bound properties to have been checked at this point.
 
 **What is the difference between onNgInit() and constructor() of a component?**
 
@@ -207,7 +209,7 @@ A: `<a [routerLink]=”[’product.id’]”>{{product.id}}</a>`
 
 **How would you select a custom component to style it?**
 
-A: TODO
+A: Using the `:host` pseudo-class selector in your component's styles.
 
 **How do you reference the host of a component?**
 
