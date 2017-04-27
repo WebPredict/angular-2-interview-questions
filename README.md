@@ -315,7 +315,7 @@ onResize(event: any) {
 
 **What would be a good use for NgZone service?**
 
-A: Running an asynchronous process outside of Angular (?)
+A: Running an asynchronous process outside of Angular change detection.
 
 **How would you protect a component being activated through the router?**
 
