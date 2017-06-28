@@ -44,7 +44,7 @@ A: Various ways - for example: Input/Output properties, services, ViewChild/View
 
 **How do you create two way data binding in Angular 2.0?**
 
-A: By using the two-way binding syntax [()] along with ngModel…
+A: By using the two-way binding syntax [()] (along with ngModel, if you're doing this in the context of a form control element).
 
 **How would you create a component to display error messages throughout your application?**
 
@@ -52,7 +52,7 @@ A: Implement your own ErrorHandler and configure it in the list of providers for
 
 **How would you support logging in your Angular app?**
 
-PA: One way would be to up angular2-logger, which is a package inspired by log4j. 
+PA: One way would be to use angular2-logger, which is a package inspired by log4j. 
 
 **How do you resolve a template URL relative to a Component class?**
 
