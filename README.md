@@ -2,7 +2,7 @@
 
 This is a collection of Angular 2 interview questions I've found online, along with (hopefully) correct answers for most of them. Feel free to contribute / send corrections.
 
-Note: PA == Possible Answer (one of many valid ones), A == Answer.
+Note: "PA" === Possible Answer (one of many valid ones), and "A" === Answer.
 
 ## Animations Questions
 
@@ -36,15 +36,15 @@ A: A component is a directive with a template (representing a view).
 
 **What are different kinds of directives supported in Angular 2?**
 
-A: Structural, directive, component, and attribute directives.
+A: Structural, component, and attribute directives.
 
 **How do components communicate with each other?**
 
-A: Various ways - for example: Input/Output properties, services, ViewChild/ViewContent...
+A: Various ways - for example: Input/Output properties, services, ViewChild/ViewContent.
 
 **How do you create two way data binding in Angular 2.0?**
 
-Answer: By using the two-way binding syntax [()] along with ngModel…
+A: By using the two-way binding syntax [()] along with ngModel…
 
 **How would you create a component to display error messages throughout your application?**
 
@@ -52,7 +52,7 @@ A: Implement your own ErrorHandler and configure it in the list of providers for
 
 **How would you support logging in your Angular app?**
 
-PA: Set up angular2-logger, which is a package inspired by log4j. 
+PA: One way would be to up angular2-logger, which is a package inspired by log4j. 
 
 **How do you resolve a template URL relative to a Component class?**
 
