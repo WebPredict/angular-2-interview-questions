@@ -1,8 +1,8 @@
-# Angular 2 Interview Questions... And Answers!
+# 90+ Angular 2+ Interview Questions And Answers
 
 This is a collection of Angular 2 interview questions I've found online, along with (hopefully) correct answers for most of them. Feel free to contribute / send corrections.
 
-Note: "PA" === Possible Answer (one of many valid ones), and "A" === Answer.
+Note: "PA" = Possible Answer (one of many valid ones), and "A" = Answer (when there's clearly just one right answer).
 
 ## Template Syntax Questions
 
@@ -211,6 +211,10 @@ A: When its related route is first requested.
 **How would you use a Route Guard?**
 
 A: You would implement CanActivate or CanDeactivate and specify that guard class in the route path you’re guarding. 
+
+**What are some different types of RouteGuards?**
+
+A: CanActivate, CanDeactivate, CanLoad, Resolve, etc.
 
 **How would you intercept 404 errors in Angular 2?**
 
