@@ -4,16 +4,6 @@ This is a collection of Angular 2 interview questions I've found online, along w
 
 Note: "PA" === Possible Answer (one of many valid ones), and "A" === Answer.
 
-## Animations Questions
-
-**How do you define transition between two states?**
-
-PA: Using the transition and animate function in an animations block like so: `animations: [transition('inactive => active'), animate('100 ms ease-in')]` 
-
-**How do you define a wildcare state?**
-
-A: Using the asterisk - example: `transition('* => active'), animate('100ms ease-in'))`
-
 ## Template Syntax Questions
 
 **What is a template reference variable, and how would you use it?**
@@ -23,6 +13,18 @@ A: A variable (defined using a #) in a component template, which can be referenc
 **What are the possible ways to bind component properties to an associated template?**
 
 A: Interpolation binding, one way binding, two way binding.
+
+**What does the ngFor template syntax look like?**
+
+A: example:`<ul><li *ngFor="let val of values">{{val}}</li></ul>`
+
+**What does the pipe syntax look like in Angular templates?**
+
+A: example: `<div>{{ value | my-pipe : option }}</div>`
+
+**What does an interpolated string look like in a template?**
+
+A: example: `<div title="Hello {{username}}">...</div>`
 
 ## Component/Directive Questions
 
@@ -53,6 +55,10 @@ A: Implement your own ErrorHandler and configure it in the list of providers for
 **How would you support logging in your Angular app?**
 
 PA: One way would be to use angular2-logger, which is a package inspired by log4j. 
+
+**How would you use the ngClass directive?**
+
+A: For example: `<div [ngClass]="{firstCondition: 'class1', secondCondition: 'class2'}">...</div>`
 
 **How do you resolve a template URL relative to a Component class?**
 
@@ -205,6 +211,16 @@ A: Can provide a final wildcard path like so: { path: ‘**’, component: PageN
 
 A: `<a [routerLink]=”[’product.id’]”>{{product.id}}</a>`
 
+
+**What do route guards return?**
+
+A: boolean or a Promise/Observable resolving to boolean value.
+
+**What is <router-outlet> for?**
+
+A: Place where routes are mounted in the app??
+
+
 ## Styling Questions:
 
 **How would you select a custom component to style it?**
@@ -280,7 +296,41 @@ PA: Use formErrors
 A: Verifying some field using some asynchronous call (perhaps a server call)… return a `Promise<ValidationResult>` from your validator. When creating a FormControl object, you can pass an asynchronous validator into the constructor (e.g. `new FormControl(‘value’, syncValidator, asyncValidator)`).
 
 
-## Architecture Questions:
+**What is patchValue used for?**
+
+A: Setting a form value (one or more fields with an object) bypassing validation.
+
+## Animations Questions
+
+**How do you define transition between two states?**
+
+PA: Using the transition and animate function in an animations block like so: `animations: [transition('inactive => active'), animate('100 ms ease-in')]` 
+
+**How do you define a wildcare state?**
+
+A: Using the asterisk - example: `transition('* => active'), animate('100ms ease-in'))`
+
+## Architecture / Framework Questions:
+
+**What are some of the top level building blocks of the Angular framework?**
+
+A: Services, Templates, Modules, Components, Providers, etc.
+
+**What is AOT?**
+
+A: Ahead of time compilation.
+
+**What are some differences between Angular 2 and 4?**
+
+A: Improvements in AOT; allowing else clause in ngIf, few other things...
+
+**What are some security related features built in to the Angular framework?**
+
+A: Sanitation, to prevent cross site scripting. Built-in support in the HttpClient to prevent cross-site request forgery.
+
+**How can you bypass sanitation in Angular and why would you do so?**
+
+A: To inject known safe code, you can bypass sanitation (e.g. to embed an iframe).
 
 **What is a good use case for ngrx/store?**
 
@@ -289,6 +339,14 @@ A: Complex application state management requirements, involving asynchronous req
 **What would be a good use case for having your own routing module?**
 
 A: An application whose requirements imply having many routes, and potentially route guards, and child routes.
+
+**Where would you configure TypeScript specific compiler options for your project?**
+
+A: In the tsconfig.json file.A
+
+**What is the tslint.json file used for?**
+
+A: Linting the TypeScript code (making sure it conforms to certain standards / conventions).
 
 ## API Questions:
 
@@ -323,5 +381,35 @@ A: Route Guards
 
 **How would you insert an embedded view from a prepared TemplateRef?**
 
-PA: `viewContainerRef.createEmbeddedView(templateRef);`
+PA: `viewContainerRef.createEmbeddedView(templateRef);
+
+## Testing Questions
+
+
+**What is Protractor?**
+
+A: E2E (end-to-end) testing framework.
+
+**What is Karma?**
+
+A: Unit test testing library.
+
+**What are spec files?**
+
+A: Jasmine unit test files.
+
+**What is TestBed?**
+
+A: Class to create testable component fixtures.
+
+**What does detectChanges to in Angular jasmine tests?**
+
+A: propagates changes to the DOM by running Angular change detection.
+
+**Why would you use a spy in a test?**
+
+A: To verify a particular value was returned or a method was called, for example when calling a service.
+
+
+`
 
