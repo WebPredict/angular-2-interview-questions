@@ -26,6 +26,16 @@ A: example: `<div>{{ value | my-pipe : option }}</div>`
 
 A: example: `<div title="Hello {{username}}">...</div>`
 
+**What is `<ng-container>`?**
+
+A: A grouping element that does not interfere with styles or layout (it's analogous to curly braces in JavaScript).
+
+
+**What is `<ng-template>`?**
+
+A: It's an Angular element for rendering HTML when using structural directives. The ng-template itself does not render to anything but a commment directly.
+
+
 ## Component/Directive Questions
 
 **What is the minimum definition of a component?**
@@ -335,6 +345,10 @@ A: To inject known safe code, you can bypass sanitation (e.g. to embed an iframe
 **What is a good use case for ngrx/store?**
 
 A: Complex application state management requirements, involving asynchronous requests to update state.
+
+**What is Redux and how does it relate to an Angular app?**
+
+A: It's a way to manage application state and improve maintainability of asynchronicity in your application by providing a single source of truth for the application state, and a unidirectional flow of data change in the application. ngrx/store is one implementation of Redux principles.
 
 **What would be a good use case for having your own routing module?**
 
