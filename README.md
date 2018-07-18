@@ -1,8 +1,9 @@
-# 90+ Angular 2+ Interview Questions And Answers
+# 100+ Angular 2, 4 and 5 Interview Questions And Answers
 
 This is a collection of Angular 2 interview questions I've found online, along with (hopefully) correct answers for most of them. Feel free to contribute / send corrections.
+I'm adding in some Angular 4 and 5 questions now.
 
-Note: "PA" = Possible Answer (one of many valid ones), and "A" = Answer (when there's clearly just one right answer).
+Note: "PA" stands for Possible Answer (one of many valid ones).
 
 ## Template Syntax Questions
 
@@ -13,6 +14,10 @@ A: A variable (defined using a #) in a component template, which can be referenc
 **What are the possible ways to bind component properties to an associated template?**
 
 A: Interpolation binding, one way binding, two way binding.
+
+**What's the difference between binding a value with or without square brackets, i.e.: `<input attr="something" />` vs `<input [attr]="something" />`?**
+
+A: The square brackets will cause "something" to be evaluated as an expression, as opposed to just be passed in as a literal string.
 
 **What does the ngFor template syntax look like?**
 
@@ -33,7 +38,7 @@ A: A grouping element that does not interfere with styles or layout (it's analog
 
 **What is `<ng-template>`?**
 
-A: It's an Angular element for rendering HTML when using structural directives. The ng-template itself does not render to anything but a commment directly.
+A: It's an Angular element for rendering HTML when using structural directives. The ng-template itself does not render to anything but a comment directly.
 
 
 ## Component/Directive Questions
@@ -73,6 +78,14 @@ A: For example: `<div [ngClass]="{firstCondition: 'class1', secondCondition: 'cl
 **How do you resolve a template URL relative to a Component class?**
 
 A: By specifying the moduleId to be module.id in the Component decorator. (Note: while this is still needed when using SystemJS, it is not necessary anymore when using Webpack module bundler for Angular 2 projects.)
+
+**What are dynamic components?**
+
+A: Components that are added at runtime (i.e. not fixed). For example, an ad banner component that is determined at runtime.
+
+**What is ComponentFactoryResolver used for?**
+
+A: A class that is used to create dynamic components - it produces a ComponentFactory for a particular component which can then be loaded into view via a createComponent on ViewContainerRef.
 
 
 ## NgModules Questions:
@@ -124,6 +137,14 @@ A: Yes.
 **What kind of classes can you import in an angular module?**
 
 A: Components, pipes, directives
+
+**What is the providers property used for in a module's NgModule metadata?**
+
+A: To provide a list of service cerators that this module contributes to the global collection of services.
+
+**What is bootstrapping in Angular?**
+
+A: The mechanism that launches the application in Angular, loading the root module (typically called AppModule) which loads one or more bootstrapped components into the application's DOM.
 
 ## Services Questions:
 
@@ -192,7 +213,7 @@ A: Stateful, asynchronous
 
 **What types of pipes are supported in Angular 2?**
 
-A: Pure and impure pipes (async pipes a kind of impure pipe).
+A: Pure and impure pipes (async pipes are a kind of impure pipe).
 
 ## Routing Questions:
 
@@ -314,6 +335,28 @@ A: Verifying some field using some asynchronous call (perhaps a server call)… 
 
 A: Setting a form value (one or more fields with an object) bypassing validation.
 
+## Observables Questions
+
+**What are observables?**
+
+A: They provide a declarative way of message passing between publishers and subscribers in an application. They typically produce one or more values over time, which are subscribed to by observers. They provide some advantages over promises.
+
+**What is RxJS?**
+
+A: RxJS stands for Reactive Extensions for JavaScript, and is a reactive programming library centered around observables and operators making it easier to write complex asynchronous code.
+
+**How do observables differ from promises?**
+
+A: Observables are declarative; promises execute immediately upon creation. Observables can provide many values, whereas promises provide one value. Observables are cancellable, whereas promiess aren't. Error handling also differs between them.
+
+**What are some advantages to using observables?**
+
+A: Observables are cancellable; they come with powerful transformative functions (especially when using RxJS) to make asynchronous coding easier.
+
+**Does an observable compute anything if it has no calls to subscribe?**
+
+A: No, it will not.
+
 ## Animations Questions
 
 **How do you define transition between two states?**
@@ -334,9 +377,13 @@ A: Services, Templates, Modules, Components, Providers, etc.
 
 A: Ahead of time compilation.
 
+**What is Reactive programming and how does it relate to Angular?**
+
+A: It's an "asynchronous programming paradigm concerned with data streams and the propagation of change."
+
 **What are some differences between Angular 2 and 4?**
 
-A: Improvements in AOT; allowing else clause in ngIf, few other things...
+A: Improvements in AOT, allowing the "else" clause in ngIf, support for TypeScript 2.1, breaking out the animations package...
 
 **What are some security related features built in to the Angular framework?**
 
@@ -365,6 +412,14 @@ A: In the tsconfig.json file.A
 **What is the tslint.json file used for?**
 
 A: Linting the TypeScript code (making sure it conforms to certain standards / conventions).
+
+**What are some changes introduced in Angular 4?**
+
+A: Introduction of the else clause in ngIf; splitting out of animation package; support for TypeScript 2.1; improvements around AOT.
+
+**What are some changes introduced in Angular 5?**
+
+A: New version of HttpClient; build optimizer; Universal State Transfer API (allows sharing state of app between server and client easily); support for TypeScript 2.3.
 
 ## API Questions:
 
