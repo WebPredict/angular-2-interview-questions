@@ -251,9 +251,9 @@ A: `<a [routerLink]=”[’product.id’]”>{{product.id}}</a>`
 
 A: boolean or a Promise/Observable resolving to boolean value.
 
-**What is <router-outlet> for?**
+**What is `<router-outlet>` for?**
 
-A: Place where routes are mounted in the app??
+A: Specifies the place where routes are mounted in the application.
 
 
 ## Styling Questions:
